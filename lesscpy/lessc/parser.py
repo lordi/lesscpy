@@ -72,7 +72,7 @@ class LessParser(object):
     def __init__(self,
                  lex_optimize=True,
                  yacc_optimize=True,
-                 tabfile='yacctab',
+                 tabfile=None,
                  yacc_debug=False,
                  scope=None,
                  outputdir='/tmp',
@@ -110,6 +110,7 @@ class LessParser(object):
             start='tunit',
             debug=yacc_debug,
             optimize=yacc_optimize,
+            write_tables=not tabfile is None,
             tabmodule=tabfile,
             outputdir=outputdir
         )
